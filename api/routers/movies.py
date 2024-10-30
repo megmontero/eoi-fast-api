@@ -33,7 +33,7 @@ class Token(BaseModel):
 # Evento de inicio para cargar las películas en Redis
 #######################################################################################################################################################################
 
-@router.lifespan_context("startup")
+@router.on_event("startup")
 def startup_event():
     """
     Cargar los datos de las películas en Redis al iniciar la aplicación.
