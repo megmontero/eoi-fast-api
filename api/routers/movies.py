@@ -164,6 +164,7 @@ def get_movies(current_user: UserSchema = Depends(get_validated_active_user)):
     
     # Ordenar y devolver las 10 mejores películas por tomatometer_rating
     sorted_movies = sorted(movies, key=lambda x: x['tomatometer_rating'], reverse=True)[:10]
+    sorted_movies=map(lambda x: x["test"] = "mgm", sorted_movies)
     return sorted_movies
 
 
